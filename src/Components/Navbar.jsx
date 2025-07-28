@@ -1,17 +1,42 @@
+import { useEffect, useState } from "react";
+
 const Navbar = () => {
+  const [isChecked, setIsChecked] = useState(true);
+  const [theme, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem("theme");
+    return storedTheme ? storedTheme : "light";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+
+    document.querySelector("html").setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = (e) => {
+    // e.preventDefault();
+    setTheme((prevTheme) => (prevTheme === "light" ? "synthwave" : "light"));
+    setIsChecked(e.target.checked);
+  };
+
   const link = (
     <>
-      <li>
+      <li className="hover:text-secondary">
         <a>Home</a>
       </li>
-      <li>
+      <li className="hover:text-secondary">
         <a>Blogs</a>
       </li>
-      <li>
+      <li className="hover:text-secondary">
         <a>Bookmarks</a>
       </li>
-      <label className="toggle text-base-content">
-        <input type="checkbox" value="synthwave" className="theme-controller" />
+      <label className="toggle text-base-content mt-1">
+        <input
+          onChange={toggleTheme}
+          type="checkbox"
+          className="theme-controller"
+          checked={isChecked}
+        />
 
         <svg
           aria-label="sun"
@@ -58,7 +83,7 @@ const Navbar = () => {
   return (
     <div>
       <div>
-        <div className="navbar bg-base-100 shadow-lg px-10 fixed z-10 lg:mb-4">
+        <div className="navbar bg-base-100 shadow-lg fixed z-10 lg:mb-4 lg:px-10">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -90,11 +115,15 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              <h2 className="text-2xl font-bold">TechTide</h2>
+              <h2 className="text-4xl font-bold text-secondary">
+                Tech<span className="text-primary">Tide</span>
+              </h2>
             </div>
           </div>
           <div className="navbar-end hidden lg:flex lg:items-center">
-            <ul className="flex gap-5 py-4">{link}</ul>
+            <ul className="flex gap-5 py-4 text-xl font-semibold cursor-pointer ">
+              {link}
+            </ul>
           </div>
         </div>
       </div>
