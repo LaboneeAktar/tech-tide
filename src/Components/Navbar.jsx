@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isChecked, setIsChecked] = useState(true);
@@ -21,15 +22,15 @@ const Navbar = () => {
 
   const link = (
     <>
-      <li className="hover:text-secondary">
-        <a>Home</a>
-      </li>
-      <li className="hover:text-secondary">
-        <a>Blogs</a>
-      </li>
-      <li className="hover:text-secondary">
-        <a>Bookmarks</a>
-      </li>
+      <Link to="/" className="hover:text-secondary">
+        Home
+      </Link>
+      <Link to="/blogs" className="hover:text-secondary">
+        Blogs
+      </Link>
+      <Link to="/bookmarks" className="hover:text-secondary">
+        Bookmarks
+      </Link>
       <label className="toggle text-base-content mt-1">
         <input
           onChange={toggleTheme}
