@@ -31,14 +31,14 @@ const Navbar = () => {
       </NavLink>
       <NavLink to="/blogs">
         {({ isActive }) => (
-          <span className={isActive ? "text-primary " : "hover:text-secondary"}>
+          <span className={isActive ? "text-primary" : "hover:text-secondary"}>
             Blogs
           </span>
         )}
       </NavLink>
       <NavLink to="/bookmarks">
         {({ isActive }) => (
-          <span className={isActive ? "text-primary " : "hover:text-secondary"}>
+          <span className={isActive ? "text-primary" : "hover:text-secondary"}>
             Bookmarks
           </span>
         )}
