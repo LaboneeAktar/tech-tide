@@ -3,7 +3,9 @@ import Hero from "../Components/Hero";
 const Home = () => {
   return (
     <>
-      <Hero></Hero>
+      <div className="flex justify-center items-center min-h-[calc(100vh-133px)]">
+        <Hero></Hero>
+      </div>
     </>
   );
 };
