@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [isChecked, setIsChecked] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
   const [theme, setTheme] = useState(() => {
     const storedTheme = localStorage.getItem("theme");
     return storedTheme ? storedTheme : "light";
@@ -22,15 +22,28 @@ const Navbar = () => {
 
   const link = (
     <>
-      <Link to="/" className="hover:text-secondary">
-        Home
-      </Link>
-      <Link to="/blogs" className="hover:text-secondary">
-        Blogs
-      </Link>
-      <Link to="/bookmarks" className="hover:text-secondary">
-        Bookmarks
-      </Link>
+      <NavLink to="/">
+        {({ isActive }) => (
+          <span className={isActive ? "text-primary" : "hover:text-secondary"}>
+            Home
+          </span>
+        )}
+      </NavLink>
+      <NavLink to="/blogs">
+        {({ isActive }) => (
+          <span className={isActive ? "text-primary " : "hover:text-secondary"}>
+            Blogs
+          </span>
+        )}
+      </NavLink>
+      <NavLink to="/bookmarks">
+        {({ isActive }) => (
+          <span className={isActive ? "text-primary " : "hover:text-secondary"}>
+            Bookmarks
+          </span>
+        )}
+      </NavLink>
+
       <label className="toggle text-base-content mt-1">
         <input
           onChange={toggleTheme}
@@ -116,9 +129,12 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              <h2 className="text-4xl font-bold text-secondary">
-                Tech<span className="text-primary">Tide</span>
-              </h2>
+              <Link to="/">
+                {" "}
+                <h2 className="text-4xl font-bold text-secondary cursor-pointer">
+                  Tech<span className="text-primary">Tide</span>
+                </h2>
+              </Link>
             </div>
           </div>
           <div className="navbar-end hidden lg:flex lg:items-center">
