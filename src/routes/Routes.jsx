@@ -3,6 +3,9 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../Pages/Home";
 import Blogs from "../Pages/Blogs/Blogs";
 import Bookmarks from "../Pages/Bookmarks";
+import BlogDetails from "../Pages/Blogs/BlogDetails";
+import Content from "../Components/Content";
+import Author from "../Components/Author";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +20,28 @@ export const router = createBrowserRouter([
         path: "/blogs",
         element: <Blogs />,
         loader: () => fetch("https://dev.to/api/articles?per_page=20&top=7"),
-        HydrateFallback: () => <div>Loading Invoice...</div>,
+        HydrateFallback: () => <div>Loading...</div>,
+      },
+      {
+        path: "/blogs/:id",
+        element: <BlogDetails />,
+        loader: ({ params }) =>
+          fetch(`https://dev.to/api/articles/${params.id}`),
+        HydrateFallback: () => <div>Loading...</div>,
+        children: [
+          {
+            index: true,
+            element: <Content />,
+            loader: ({ params }) =>
+              fetch(`https://dev.to/api/articles/${params.id}`),
+          },
+          {
+            path: "author",
+            element: <Author />,
+            loader: ({ params }) =>
+              fetch(`https://dev.to/api/articles/${params.id}`),
+          },
+        ],
       },
       {
         path: "/bookmarks",

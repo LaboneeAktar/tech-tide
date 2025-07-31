@@ -18,7 +18,7 @@ const Blogs = () => {
             className="object-fit w-full h-64 rounded sm:h-96 lg:col-span-7"
           />
           <div className="p-6 space-y-2 lg:col-span-5 bg-slate-200 text-black rounded-md">
-            <h3 className="text-2xl font-semibold sm:text-3xl sm:w-full">
+            <h3 className="text-2xl font-semibold sm:text-3xl sm:w-full pt-6">
               {blogs[4].title}
             </h3>
             <span className="text-md py-4 text-gray-600 dark:text-gray-600">
