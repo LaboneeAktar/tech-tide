@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import placeHolderImg from "../../assets/404-img.jpg";
+import { MdDeleteForever } from "react-icons/md";
 
-const Blog = ({ blog, deletable }) => {
+const Blog = ({ blog, deletable, handleDelete }) => {
   const { id, cover_image, title, published_at, description } = blog;
   return (
-    <>
+    <div className="flex relative">
       <Link
         to={`/blogs/${id}`}
-        className="h-full max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50 rounded-md border-[.5px] border-primary transition-all border-opacity-30 hover:scale-105 hover:shadow-lg hover:border-secondary flex flex-col "
+        className="h-full max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50 rounded-md border-[.5px] border-slate-300 transition-all border-opacity-30 hover:scale-105 hover:shadow-lg hover:border-secondary flex flex-col "
       >
         <img
           role="presentation"
@@ -24,8 +25,17 @@ const Blog = ({ blog, deletable }) => {
           <p className="mt-2">{description}</p>
         </div>
       </Link>
-      {deletable && <button className="btn">Delete</button>}
-    </>
+      {deletable && (
+        <div
+          onClick={() => {
+            handleDelete(id);
+          }}
+          className="absolute bg-slate-300 p-3 ml-5 rounded-full cursor-pointer hover:scale-110 overflow-hidden -top-5 -right-4"
+        >
+          <MdDeleteForever size={26} className="text-secondary" />
+        </div>
+      )}
+    </div>
   );
 };
 

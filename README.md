@@ -11,3 +11,4 @@
 - React-[MarkDown](https://www.npmjs.com/package/react-markdown)
 - ReHype-[Raw](https://www.npmjs.com/package/rehype-raw)
 - React [Spinner](https://www.npmjs.com/package/react-spinners)
+- React Hot [Toast](https://react-hot-toast.com/)
