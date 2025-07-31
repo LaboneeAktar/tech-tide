@@ -28,18 +28,21 @@ export const router = createBrowserRouter([
         element: <BlogDetails />,
         loader: ({ params }) =>
           fetch(`https://dev.to/api/articles/${params.id}`),
+        HydrateFallback: () => <Loader />,
         children: [
           {
             index: true,
             element: <Content />,
             loader: ({ params }) =>
               fetch(`https://dev.to/api/articles/${params.id}`),
+            HydrateFallback: () => <Loader />,
           },
           {
             path: "author",
             element: <Author />,
             loader: ({ params }) =>
               fetch(`https://dev.to/api/articles/${params.id}`),
+            HydrateFallback: () => <Loader />,
           },
         ],
       },

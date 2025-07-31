@@ -27,7 +27,9 @@ const Content = () => {
         <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
           {title}
         </h3>
-        <Markdown rehypePlugins={rehypeRaw}>{body_html}</Markdown>
+        <div className="overflow-x-hidden text-wrap">
+          <Markdown rehypePlugins={rehypeRaw}>{body_html}</Markdown>
+        </div>
       </div>
     </div>
   );
