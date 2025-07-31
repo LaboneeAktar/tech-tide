@@ -7,11 +7,13 @@ import BlogDetails from "../Pages/Blogs/BlogDetails";
 import Content from "../Components/Content";
 import Author from "../Components/Author";
 import Loader from "../Components/Loader";
+import ErrorPage from "../Components/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
