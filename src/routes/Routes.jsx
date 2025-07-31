@@ -6,6 +6,7 @@ import Bookmarks from "../Pages/Bookmarks";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 import Content from "../Components/Content";
 import Author from "../Components/Author";
+import Loader from "../Components/Loader";
 
 export const router = createBrowserRouter([
   {
@@ -20,14 +21,13 @@ export const router = createBrowserRouter([
         path: "/blogs",
         element: <Blogs />,
         loader: () => fetch("https://dev.to/api/articles?per_page=20&top=7"),
-        HydrateFallback: () => <div>Loading...</div>,
+        HydrateFallback: () => <Loader />,
       },
       {
         path: "/blogs/:id",
         element: <BlogDetails />,
         loader: ({ params }) =>
           fetch(`https://dev.to/api/articles/${params.id}`),
-        HydrateFallback: () => <div>Loading...</div>,
         children: [
           {
             index: true,

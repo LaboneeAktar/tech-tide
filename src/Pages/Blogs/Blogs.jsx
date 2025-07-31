@@ -1,9 +1,13 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import Blog from "./Blog";
 import placeHolderImg from "../../assets/404-img.jpg";
+import Loader from "../../Components/Loader";
 
 const Blogs = () => {
   const blogs = useLoaderData();
+  const navigation = useNavigation();
+
+  if (navigation.state === "loading") return <Loader></Loader>;
 
   return (
     <section className=" dark:bg-gray-100 text-gray-100 dark:text-gray-800 mt-10">

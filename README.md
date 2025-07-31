@@ -10,3 +10,4 @@
 - Animation [Text](https://www.andrealves.dev/blog/how-to-make-an-animated-gradient-text-with-tailwindcss/)
 - React-[MarkDown](https://www.npmjs.com/package/react-markdown)
 - ReHype-[Raw](https://www.npmjs.com/package/rehype-raw)
+- React [Spinner](https://www.npmjs.com/package/react-spinners)
