@@ -1,5 +1,24 @@
 ## Tech Tide
 
+Live Link - [TechTide](https://tech-tide-labbie.netlify.app/)
+
+### Key Features
+
+**Explore Blogs**
+Seamlessly browse a collection of engaging and informative blog posts.
+
+**View Blog Details**
+Access detailed information for each blog, including content, author, and publication date.
+
+**Bookmark Management**
+Add your favorite blogs to bookmarks for quick access anytime.
+
+**Remove Bookmarks**
+Easily delete bookmarks you no longer need with a single click.
+
+**Theme Customization**
+Switch between light and dark themes for a personalized reading experience.
+
 #### Uses
 
 - React + Vite
