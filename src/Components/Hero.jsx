@@ -6,7 +6,12 @@ const Hero = () => {
       <div className="hero">
         <div className="hero-content text-center">
           <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Welcome to TechTide</h1>
+            <h1 className="text-5xl font-bold">
+              Welcome to{" "}
+              <span className="bg-gradient-to-r from-primary via-blue-500 to-secondary text-transparent bg-clip-text animate-gradient">
+                TechTide
+              </span>{" "}
+            </h1>
             <p className="py-6">
               Bridging complex technology with curious minds — one clear
               explanation at a time.
