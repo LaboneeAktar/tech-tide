@@ -9,7 +9,6 @@ const BlogDetails = () => {
     title,
     reading_time_minutes,
     public_reactions_count,
-    tags,
   } = blog;
   return (
     <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
@@ -27,7 +26,7 @@ const BlogDetails = () => {
               {comments_count} comments • {public_reactions_count} views
             </p>
           </div>
-          <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
+          <div className="flex items-center overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
             <Link
               to=""
               onClick={() => setTabIndex(0)}
@@ -75,18 +74,6 @@ const BlogDetails = () => {
         </div>
         <Outlet />
       </article>
-      <div>
-        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
-          {tags.map((tag) => (
-            <h4
-              key={tag}
-              className="px-3 py-1 rounded-sm dark:bg-violet-600 dark:text-gray-50"
-            >
-              #{tag}
-            </h4>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };
