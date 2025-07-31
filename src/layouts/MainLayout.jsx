@@ -6,12 +6,12 @@ const MainLayout = () => {
   return (
     <div>
       {/* Navbar */}
-      <div className="h-10">
+      <div className="h-16">
         <Navbar></Navbar>
         <h1>Navbar</h1>
       </div>
 
-      <div className="min-h-[calc(100vh-92px)]">
+      <div className="min-h-[calc(100vh-116px)]">
         <Outlet></Outlet>
       </div>
 
