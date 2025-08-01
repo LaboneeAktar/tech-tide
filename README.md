@@ -5,19 +5,24 @@ Live Link - [TechTide](https://tech-tide-labbie.netlify.app/)
 ### Key Features
 
 **Explore Blogs**
-Seamlessly browse a collection of engaging and informative blog posts.
+
+- Seamlessly browse a collection of engaging and informative blog posts.
 
 **View Blog Details**
-Access detailed information for each blog, including content, author, and publication date.
+
+- Access detailed information for each blog, including content, author, and publication date.
 
 **Bookmark Management**
-Add your favorite blogs to bookmarks for quick access anytime.
+
+- Add your favorite blogs to bookmarks for quick access anytime.
 
 **Remove Bookmarks**
-Easily delete bookmarks you no longer need with a single click.
+
+- Easily delete bookmarks you no longer need with a single click.
 
 **Theme Customization**
-Switch between light and dark themes for a personalized reading experience.
+
+- Switch between light and dark themes for a personalized reading experience.
 
 #### Uses
 
@@ -31,3 +36,4 @@ Switch between light and dark themes for a personalized reading experience.
 - ReHype-[Raw](https://www.npmjs.com/package/rehype-raw)
 - React [Spinner](https://www.npmjs.com/package/react-spinners)
 - React Hot [Toast](https://react-hot-toast.com/)
+- React [Helmet](https://www.npmjs.com/package/react-helmet)

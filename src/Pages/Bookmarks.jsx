@@ -3,6 +3,7 @@ import { deleteBlog, getBlogs } from "../utils/utilities";
 import Blog from "./Blogs/Blog";
 import EmptyState from "../Components/EmptyState";
 import wave from "../assets/wave.svg";
+import { Helmet } from "react-helmet";
 
 const Bookmarks = () => {
   const [blogs, setBlogs] = useState([]);
@@ -22,6 +23,9 @@ const Bookmarks = () => {
   if (blogs.length < 1) {
     return (
       <>
+        <Helmet>
+          <title>TechTide - Bookmarks</title>
+        </Helmet>
         <EmptyState
           message="No Bookmarks Available!"
           address="/blogs"
@@ -33,16 +37,21 @@ const Bookmarks = () => {
   }
 
   return (
-    <div className="grid px-4 md:px-8 lg:px-12 pt-20 pb-8 justify-center grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {blogs.map((blog) => (
-        <Blog
-          deletable={true}
-          key={blog.id}
-          blog={blog}
-          handleDelete={handleDelete}
-        ></Blog>
-      ))}
-    </div>
+    <>
+      <Helmet>
+        <title>TechTide - Bookmarks</title>
+      </Helmet>
+      <div className="grid px-4 md:px-8 lg:px-12 pt-20 pb-8 justify-center grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {blogs.map((blog) => (
+          <Blog
+            deletable={true}
+            key={blog.id}
+            blog={blog}
+            handleDelete={handleDelete}
+          ></Blog>
+        ))}
+      </div>
+    </>
   );
 };
 
